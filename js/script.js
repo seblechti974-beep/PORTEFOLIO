@@ -38,31 +38,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Submission (Dummy logic)
+// Form Submission (Actual Logic)
 const form = document.querySelector('form');
 if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = form.querySelector('button');
         const originalText = btn.textContent;
+        const formData = new FormData(form);
         
         btn.textContent = 'Envoi en cours...';
         btn.disabled = true;
         btn.style.opacity = '0.7';
 
-        setTimeout(() => {
-            btn.textContent = 'Message Envoyé !';
-            btn.style.background = 'var(--success)';
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                btn.textContent = 'Message Envoyé !';
+                btn.style.background = 'var(--success)';
+                form.reset();
+            } else {
+                throw new Error('Erreur de réponse');
+            }
+        } catch (error) {
+            btn.textContent = 'Erreur lors de l\'envoi';
+            btn.style.background = '#e74c3c'; // Red for error
+            console.error('Submission error:', error);
+        } finally {
             btn.disabled = false;
+            btn.style.opacity = '1';
             
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.style.background = 'var(--accent)';
-                form.reset();
             }, 3000);
-        }, 1500);
+        }
     });
 }
+
 
 // Hero section parallax
 window.addEventListener('scroll', () => {

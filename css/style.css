@@ -11,6 +11,8 @@
     --glass: rgba(13, 17, 23, 0.6);
     --glass-border: rgba(255, 255, 255, 0.1);
     --border: #1e293b;
+    --success: #10b981;
+    --error: #ef4444;
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
