@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Coordination & Modélisation Nuages de Points</title>
+    <meta name="description"
+        content="Portfolio de Coordinateur et Modeleur BIM. Modélisation de maquettes numériques à partir de nuages de points. Coordination de projets complexes et gestion de données BIM.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+
+<body>
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <!-- Header / Nav -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">SEBASTIEN<span>NIGRO</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-grid" data-aos="fade-up">
+            <div class="hero-left">
+                <div class="profile-img-container">
+                    <img src="assets/images/photo.jpg" alt="Sébastien Nigro" class="profile-img">
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Expert BIM & Scan-to-BIM
+                    </div>
+                    <span class="hero-tagline">Coordinateur BIM & Expert Revit MEP</span>
+                    <h1>Synthèse technique, <span style="color: var(--accent);">Scan-to-BIM</span> & Fiabilisation des
+                        métrés.</h1>
+                    <p>Bonjour je m'appelle Sébastien Nigro, je suis Modeleur Revit MEP spécialisé en fluides, je
+                        sécurise vos phases de conception et réhabilitation par une coordination rigoureuse
+                        réseaux/structure et une fiabilisation précise des DPGF.</p>
+                    <div class="hero-btns">
+                        <a href="#projets" class="btn btn-primary">Explorer mes projets <i class="fas fa-arrow-right"
+                                style="margin-left: 10px;"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span>RÉALISATIONS MAJEURES</span>
+                <h2>Mes Projets</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-slider" id="slider-logement">
+                        <div class="slider-container">
+                            <div class="slider-slide"><img src="assets/images/logement.png"
+                                    alt="Ensemble Résidentiel Caricubes - Vue 1" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/logement type.png"
+                                    alt="Caricubes - Logement Type" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/facade.png" alt="Caricubes - Façade"
+                                    class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/Plan de niveau.png"
+                                    alt="Caricubes - Plan de niveau" class="show-full"></div>
+                        </div>
+                        <div class="slider-nav">
+                            <div class="slider-dot active" data-index="0"></div>
+                            <div class="slider-dot" data-index="1"></div>
+                            <div class="slider-dot" data-index="2"></div>
+                            <div class="slider-dot" data-index="3"></div>
+                        </div>
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="project-overlay">
+                        <span class="project-tag">Relevé de l'existant en milieu occupé</span>
+                        <h3>Ensemble Résidentiel </h3>
+                        <p>Modélisation complète d'un ensemble de logements collectifs à partir d'un nuage de point</p>
+                        <div class="project-details">Outils : Revit, BIM Collab</div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-slider" id="slider-rectorat">
+                        <div class="slider-container">
+                            <div class="slider-slide"><img src="assets/images/rectorat.png"
+                                    alt="Rectorat Académique - Vue 1"></div>
+                            <div class="slider-slide"><img src="assets/images/rectorat en entier.png"
+                                    alt="Rectorat Académique - Vue Complète" class="show-full"></div>
+                        </div>
+                        <div class="slider-nav">
+                            <div class="slider-dot active" data-index="0"></div>
+                            <div class="slider-dot" data-index="1"></div>
+                        </div>
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="project-overlay">
+                        <span class="project-tag">Modélisation Scan-to-BIM</span>
+                        <h3>Rectorat Académique</h3>
+                        <p>Modélisation haute fidélité (LOD 400) à partir d'un nuage de points pour la rénovation
+                            énergétique du bâtiment.</p>
+                        <div class="project-details">Outils : Leica Trueview, Revit, Recap Pro</div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-slider" id="slider-industriel">
+                        <div class="slider-container">
+                            <div class="slider-slide"><img src="assets/images/Métré façade.png"
+                                    alt="Fiabilisation Métrés - Façade" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/Métré par logement type.png"
+                                    alt="Fiabilisation Métrés - Logement 1" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/Métré par logement type 2.png"
+                                    alt="Fiabilisation Métrés - Logement 2" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/Métré partie commune.png"
+                                    alt="Fiabilisation Métrés - Partie Commune" class="show-full"></div>
+                        </div>
+                        <div class="slider-nav">
+                            <div class="slider-dot active" data-index="0"></div>
+                            <div class="slider-dot" data-index="1"></div>
+                            <div class="slider-dot" data-index="2"></div>
+                            <div class="slider-dot" data-index="3"></div>
+                        </div>
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="project-overlay">
+                        <span class="project-tag">Fiabilisation DPGF </span>
+                        <h3>Fiabilisation Métrés</h3>
+                        <p>Extraction de métrés suivant le (DPGF) demandé par le client .
+                        </p>
+                        <div class="project-details">Outils : Revit, BIM Collab, Excel</div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-slider" id="slider-fluides">
+                        <div class="slider-container">
+                            <div class="slider-slide"><img src="assets/images/reseau eau glacé.png"
+                                    alt="Synthèse Technique Fluides - Vue 1" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/coupe 1.png"
+                                    alt="Synthèse Technique Fluides - Coupe Technique" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/nomenclature canalisations.png"
+                                    alt="Nomenclature Canalisations" class="show-full"></div>
+                            <div class="slider-slide"><img src="assets/images/nomenclature equipement cvc.png"
+                                    alt="Nomenclature Équipements CVC" class="show-full"></div>
+                        </div>
+                        <div class="slider-nav">
+                            <div class="slider-dot active" data-index="0"></div>
+                            <div class="slider-dot" data-index="1"></div>
+                            <div class="slider-dot" data-index="2"></div>
+                            <div class="slider-dot" data-index="3"></div>
+                        </div>
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="project-overlay">
+                        <span class="project-tag">BIM Coordination Fluides</span>
+                        <h3>Synthèse Technique Fluides</h3>
+                        <p>Coordination interdisciplinaire de synthèse (EXE), nomenclatures et détection de conflits</p>
+                        <div class="project-details">Outils : Revit MEP, Navisworks , BIM Collab</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span>MÉTHODOLOGIE</span>
+                <h2>Flux de travail Scan-to-BIM</h2>
+            </div>
+
+            <div class="workflow-steps">
+                <div class="step" data-aos="fade-right">
+                    <div class="step-num">01</div>
+                    <h4>Capture Réalité</h4>
+                    <p>Scanning laser 3D sur site (Terrestre ou Drone) pour capturer l'existant avec précision
+                        millimétrique.</p>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-num">02</div>
+                    <h4>Nuage de Points</h4>
+                    <p>Assemblage et recalage des données. Nettoyage et structuration sous Recap Pro / Cyclone.</p>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="200">
+                    <div class="step-num">03</div>
+                    <h4>Modélisation</h4>
+                    <p>Conversion du nuage de points en objets BIM intelligents (Revit) avec gestion du LOD.</p>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-num">04</div>
+                    <h4>Contrôle & Qualité</h4>
+                    <p>Détection entre nuage/maquette et coordination inter-métiers via Navisworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Skills Section -->
+    <section id="expertise">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span>COMPÉTENCES & OUTILS</span>
+                <h2>Mon Expertise Technique</h2>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-box" data-aos="zoom-in">
+                    <i class="fas fa-tools"></i>
+                    <h4>Revit MEP & Fluides</h4>
+                    <p>Conception réseaux CVCD, PB, ELEC et familles paramétriques.</p>
+                </div>
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-check-double"></i>
+                    <h4>Synthèse Technique</h4>
+                    <p>Détection de conflits (Clash Detection) et résolution réseaux/structure.</p>
+                </div>
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h4>Scan-to-BIM</h4>
+                    <p>Maquettes fidèles à partir de nuages de points complexes.</p>
+                </div>
+                <div class="skill-box" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-file-invoice-doll"></i>
+                    <h4>Fiabilisation DPGF</h4>
+                    <p>Extraction de métrés précis et sécurisation financière des projets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Prêt à collaborer sur votre prochain projet ?</h2>
+                    <p>Expertise technique, rigueur méthodologique et passion pour l'innovation numérique dans la
+                        construction.</p>
+                    <ul style="margin-top: 2rem;">
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-envelope"
+                                style="color: var(--accent); margin-right: 1rem;"></i> seblechti974@gmail.com</li>
+                        <li><i class="fas fa-phone" style="color: var(--accent); margin-right: 1rem;"></i> +262 (0)6 93
+                            97 05 98</li>
+                    </ul>
+                </div>
+                <div class="contact-form glass-morphism" data-aos="fade-left" style="padding: 3rem;">
+                    <form action="#">
+                        <input type="text" placeholder="Votre Nom" required>
+                        <input type="email" placeholder="Votre Email" required>
+                        <textarea placeholder="Votre Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Envoyer le
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SEBASTIEN<span>NIGRO</span></div>
+                <p>&copy; 2026 BIM EXPERT - Tous droits réservés. Conçu pour l'excellence numérique.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Full view">
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#hero" id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- JS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>
