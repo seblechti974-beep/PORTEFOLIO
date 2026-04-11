@@ -194,31 +194,37 @@ async function updateVisitorCount() {
     if (urlParams.get('admin') === 'true') {
         localStorage.setItem('portfolio_isAdmin', 'true');
         alert("Mode Administrateur activé ! Vos visites sur cet appareil ne seront plus comptabilisées.");
-        // Clean up URL without refreshing
         const newUrl = window.location.origin + window.location.pathname;
         window.history.replaceState({}, document.title, newUrl);
     }
 
-    // 2. Check if admin mode is active
     const isAdmin = localStorage.getItem('portfolio_isAdmin') === 'true';
-    
-    // Choose endpoint: 'up' to increment, nothing ('') for read-only GET
-    const endpoint = isAdmin ? '' : '/up';
 
     try {
-        const response = await fetch(`https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors${endpoint}`);
-        const data = await response.json();
+        let count;
+        const baseUrl = 'https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors';
+
+        if (isAdmin) {
+            // Admin workaround for V1: Increment then immediately decrement to get the count without changing it
+            // This bypasses the lack of a read-only endpoint in V1 and potential CORS issues on the base URL
+            await fetch(`${baseUrl}/up`);
+            const response = await fetch(`${baseUrl}/down`);
+            const data = await response.json();
+            count = data.count;
+        } else {
+            // Normal visitor: just increment
+            const response = await fetch(`${baseUrl}/up`);
+            const data = await response.json();
+            count = data.count;
+        }
         
-        if (data && data.count !== undefined) {
-            counterElement.textContent = data.count.toLocaleString();
+        if (count !== undefined) {
+            counterElement.textContent = count.toLocaleString();
             container.classList.add('visible');
             
-            // Visible indicator for admin
             if (isAdmin) {
-                counterElement.style.color = '#00ffcc'; // Bright neon for admin
+                counterElement.style.color = '#00ffcc';
                 counterElement.style.fontWeight = 'bold';
-                
-                // Add an explicit (Admin) label if it doesn't exist
                 if (!document.getElementById('admin-badge')) {
                     const badge = document.createElement('span');
                     badge.id = 'admin-badge';
@@ -228,14 +234,21 @@ async function updateVisitorCount() {
                     badge.style.marginLeft = '5px';
                     counterElement.parentNode.appendChild(badge);
                 }
-                
                 container.title = "Vos visites ne sont plus comptabilisées.";
             }
         }
     } catch (error) {
         console.error('Error fetching visitor count:', error);
-        // Fallback: hide the counter if API fails
-        container.style.opacity = '0';
+        // Show something even if it fails for the admin
+        if (isAdmin) {
+            counterElement.textContent = "---";
+            container.classList.add('visible');
+            const badge = document.createElement('span');
+            badge.textContent = ' (Mode Admin Activé)';
+            badge.style.fontSize = '0.7em';
+            badge.style.color = 'var(--accent)';
+            counterElement.parentNode.appendChild(badge);
+        }
     }
 }
 
