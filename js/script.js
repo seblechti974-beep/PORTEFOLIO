@@ -187,67 +187,66 @@ function initLightbox() {
 async function updateVisitorCount() {
     const counterElement = document.getElementById('visitor-count');
     const container = document.getElementById('visitor-container');
+    const labelElement = container ? container.querySelector('span') : null;
+    
     if (!counterElement || !container) return;
 
-    // 1. Check for activation via URL
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('admin') === 'true') {
+    // 1. Forced Activation via URL
+    if (window.location.search.includes('admin=true')) {
         localStorage.setItem('portfolio_isAdmin', 'true');
-        alert("Mode Administrateur activé ! Vos visites sur cet appareil ne seront plus comptabilisées.");
-        const newUrl = window.location.origin + window.location.pathname;
-        window.history.replaceState({}, document.title, newUrl);
+        alert("MODE ADMINISTRATEUR ACTIVÉ : Vos visites ne seront plus comptées sur ce navigateur.");
+        // Nettoyage de l'URL sans recharger
+        const freshUrl = window.location.href.split('?')[0];
+        window.history.replaceState({}, document.title, freshUrl);
     }
 
     const isAdmin = localStorage.getItem('portfolio_isAdmin') === 'true';
+    const baseUrl = 'https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors';
+
+    if (isAdmin) {
+        console.log("Portfolio: Admin Mode Active");
+        if (labelElement) labelElement.textContent = "Visites (Admin) : ";
+        counterElement.style.color = "#00ffcc";
+        counterElement.style.fontWeight = "bold";
+    }
 
     try {
         let count;
-        const baseUrl = 'https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors';
-
         if (isAdmin) {
-            // Admin workaround for V1: Increment then immediately decrement to get the count without changing it
-            // This bypasses the lack of a read-only endpoint in V1 and potential CORS issues on the base URL
-            await fetch(`${baseUrl}/up`);
-            const response = await fetch(`${baseUrl}/down`);
-            const data = await response.json();
-            count = data.count;
+            // Pour l'admin, on tente de lire sans incrémenter. 
+            // Si le GET échoue (CORS v1), on affiche quand même le compteur mais sans changer le serveur.
+            try {
+                // Workaround: On fait un UP puis un DOWN pour lire la valeur sans la changer
+                // C'est le moyen le plus sûr en V1 pour contourner les limites de lecture seule
+                await fetch(`${baseUrl}/up`);
+                const response = await fetch(`${baseUrl}/down`);
+                const data = await response.json();
+                count = data.count;
+            } catch (e) {
+                console.warn("Erreur workaround admin, tentative lecture simple...");
+                const response = await fetch(baseUrl);
+                const data = await response.json();
+                count = data.count;
+            }
         } else {
-            // Normal visitor: just increment
+            // Visiteur normal : incrémentation classique
             const response = await fetch(`${baseUrl}/up`);
             const data = await response.json();
             count = data.count;
         }
-        
+
         if (count !== undefined) {
             counterElement.textContent = count.toLocaleString();
             container.classList.add('visible');
-            
-            if (isAdmin) {
-                counterElement.style.color = '#00ffcc';
-                counterElement.style.fontWeight = 'bold';
-                if (!document.getElementById('admin-badge')) {
-                    const badge = document.createElement('span');
-                    badge.id = 'admin-badge';
-                    badge.textContent = ' (Admin)';
-                    badge.style.fontSize = '0.7em';
-                    badge.style.color = 'var(--accent)';
-                    badge.style.marginLeft = '5px';
-                    counterElement.parentNode.appendChild(badge);
-                }
-                container.title = "Vos visites ne sont plus comptabilisées.";
-            }
         }
     } catch (error) {
-        console.error('Error fetching visitor count:', error);
-        // Show something even if it fails for the admin
+        console.error('Visitor Counter Error:', error);
+        // En cas d'erreur API, on montre quand même le compteur avec un état "chargé" pour l'admin
         if (isAdmin) {
-            counterElement.textContent = "---";
+            counterElement.textContent = "Connecté";
             container.classList.add('visible');
-            const badge = document.createElement('span');
-            badge.textContent = ' (Mode Admin Activé)';
-            badge.style.fontSize = '0.7em';
-            badge.style.color = 'var(--accent)';
-            counterElement.parentNode.appendChild(badge);
+        } else {
+            container.style.display = 'none';
         }
     }
 }
