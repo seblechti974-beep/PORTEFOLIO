@@ -189,19 +189,53 @@ async function updateVisitorCount() {
     const container = document.getElementById('visitor-container');
     if (!counterElement || !container) return;
 
+    // 1. Check for activation via URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('admin') === 'true') {
+        localStorage.setItem('portfolio_isAdmin', 'true');
+        alert("Mode Administrateur activé ! Vos visites sur cet appareil ne seront plus comptabilisées.");
+        // Clean up URL without refreshing
+        const newUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+    }
+
+    // 2. Check if admin mode is active
+    const isAdmin = localStorage.getItem('portfolio_isAdmin') === 'true';
+    
+    // Choose endpoint: 'up' to increment, nothing ('') for read-only GET
+    const endpoint = isAdmin ? '' : '/up';
+
     try {
-        // Namespace: seblechti974-beep (GitHub Username)
-        // Key: portfolio-visitors
-        const response = await fetch('https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors/up');
+        const response = await fetch(`https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors${endpoint}`);
         const data = await response.json();
         
-        if (data && data.count) {
+        if (data && data.count !== undefined) {
             counterElement.textContent = data.count.toLocaleString();
             container.classList.add('visible');
+            
+            // Visible indicator for admin
+            if (isAdmin) {
+                counterElement.style.color = '#00ffcc'; // Bright neon for admin
+                counterElement.style.fontWeight = 'bold';
+                
+                // Add an explicit (Admin) label if it doesn't exist
+                if (!document.getElementById('admin-badge')) {
+                    const badge = document.createElement('span');
+                    badge.id = 'admin-badge';
+                    badge.textContent = ' (Admin)';
+                    badge.style.fontSize = '0.7em';
+                    badge.style.color = 'var(--accent)';
+                    badge.style.marginLeft = '5px';
+                    counterElement.parentNode.appendChild(badge);
+                }
+                
+                container.title = "Vos visites ne sont plus comptabilisées.";
+            }
         }
     } catch (error) {
         console.error('Error fetching visitor count:', error);
-        container.style.display = 'none';
+        // Fallback: hide the counter if API fails
+        container.style.opacity = '0';
     }
 }
 
