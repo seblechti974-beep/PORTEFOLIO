@@ -658,6 +658,39 @@ footer {
     transform: translateY(-3px);
 }
 
+/* Visitor Counter */
+.visitor-counter {
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.visitor-counter.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visitor-counter i {
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+.visitor-counter #visitor-count {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;

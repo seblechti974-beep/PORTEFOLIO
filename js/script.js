@@ -183,7 +183,30 @@ function initLightbox() {
     });
 }
 
+// Visitor Counter Logic
+async function updateVisitorCount() {
+    const counterElement = document.getElementById('visitor-count');
+    const container = document.getElementById('visitor-container');
+    if (!counterElement || !container) return;
+
+    try {
+        // Namespace: seblechti974-beep (GitHub Username)
+        // Key: portfolio-visitors
+        const response = await fetch('https://api.counterapi.dev/v1/seblechti974-beep/portfolio-visitors/up');
+        const data = await response.json();
+        
+        if (data && data.count) {
+            counterElement.textContent = data.count.toLocaleString();
+            container.classList.add('visible');
+        }
+    } catch (error) {
+        console.error('Error fetching visitor count:', error);
+        container.style.display = 'none';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initSliders();
     initLightbox();
+    updateVisitorCount();
 });
