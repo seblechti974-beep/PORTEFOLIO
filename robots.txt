@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seblechti974-beep.github.io/PORTEFOLIO/sitemap.xml
