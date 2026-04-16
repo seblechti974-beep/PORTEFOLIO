@@ -525,30 +525,30 @@ nav .container {
 
 .expand-hint {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(13, 17, 23, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgba(13, 17, 23, 0.7);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--glass-border);
     color: var(--text-primary);
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 100px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
     z-index: 15;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .expand-hint {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .expand-hint i {
