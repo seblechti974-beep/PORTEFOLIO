@@ -34,7 +34,7 @@ html {
 
 body {
     background-color: var(--bg-primary);
-    background-image: 
+    background-image:
         radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
     color: var(--text-primary);
@@ -57,7 +57,10 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.1;
@@ -91,7 +94,7 @@ section::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(88, 166, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(88, 166, 255, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -219,6 +222,7 @@ nav .container {
         text-align: center;
         gap: 2rem;
     }
+
     .hero-right {
         text-align: center;
     }
@@ -248,9 +252,20 @@ nav .container {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.5; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .hero-tagline {
@@ -419,7 +434,8 @@ nav .container {
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: #000; /* Dark background to see full image if aspect ratio differs */
+    background: #000;
+    /* Dark background to see full image if aspect ratio differs */
 }
 
 .slider-container {
@@ -436,11 +452,13 @@ nav .container {
 .slider-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Default like before */
+    object-fit: cover;
+    /* Default like before */
 }
 
 .slider-slide img.show-full {
-    object-fit: contain; /* Specifically show entire image */
+    object-fit: contain;
+    /* Specifically show entire image */
 }
 
 .slider-nav {
@@ -497,8 +515,13 @@ nav .container {
     color: var(--bg-primary);
 }
 
-.slider-arrow.prev { left: 1rem; }
-.slider-arrow.next { right: 1rem; }
+.slider-arrow.prev {
+    left: 1rem;
+}
+
+.slider-arrow.next {
+    right: 1rem;
+}
 
 .project-overlay {
     padding: 1.5rem;
@@ -590,7 +613,8 @@ nav .container {
     flex: 1.5;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 1rem 1.5rem;
     background: rgba(255, 255, 255, 0.03);
@@ -602,7 +626,8 @@ input, textarea {
     transition: var(--transition-fast);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--accent);
     background: rgba(255, 255, 255, 0.05);
@@ -708,6 +733,7 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent);
 }
+
 /* Back to Top */
 .back-to-top {
     position: fixed;
@@ -739,14 +765,28 @@ footer {
     background: var(--accent-dark);
     transform: translateY(-5px);
 }
+
 /* Utilities */
-.text-accent { color: var(--accent); }
-.mt-2 { margin-top: 2rem; }
+.text-accent {
+    color: var(--accent);
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
 
 @media (max-width: 768px) {
-    .container { padding: 0 1.5rem; }
-    section { padding: 5rem 0; }
-    .hero-right h1 { font-size: 2.5rem; }
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    section {
+        padding: 5rem 0;
+    }
+
+    .hero-right h1 {
+        font-size: 2.5rem;
+    }
 }
 
 /* Lightbox / Modal */
@@ -771,7 +811,7 @@ footer {
     max-width: 90%;
     max-height: 90vh;
     border-radius: 8px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     cursor: default;
 }
 
