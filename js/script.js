@@ -159,15 +159,56 @@ function initLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     const closeBtn = lightbox.querySelector('.lightbox-close');
-    const projectImages = document.querySelectorAll('.project-card img');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+    const projectImages = Array.from(document.querySelectorAll('.project-card img'));
+    
+    let currentIndex = 0;
 
-    projectImages.forEach(img => {
+    function updateLightbox() {
+        if (projectImages[currentIndex]) {
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = projectImages[currentIndex].src;
+                lightboxImg.style.opacity = '1';
+            }, 200);
+        }
+    }
+
+    projectImages.forEach((img, index) => {
         img.addEventListener('click', (e) => {
             e.stopPropagation();
+            currentIndex = index;
             lightboxImg.src = img.src;
+            lightboxImg.style.opacity = '1';
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
         });
+    });
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + projectImages.length) % projectImages.length;
+            updateLightbox();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % projectImages.length;
+            updateLightbox();
+        });
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
     });
 
     closeBtn.addEventListener('click', () => {
