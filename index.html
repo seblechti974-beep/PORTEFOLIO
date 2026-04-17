@@ -222,8 +222,14 @@
                         <div class="slider-container">
                             <div class="slider-slide" style="position: relative;">
                                 <!-- Visionneuse 3D Native -->
-                                <model-viewer src="assets/models/3dExport.gltf" alt="Clash Interactif CVC vs ARCH" auto-rotate camera-controls style="width: 100%; height: 100%; background-color: #e5e5e5; display: block; border-radius: 8px;"></model-viewer>
+                                <model-viewer id="clash-model" src="assets/models/3dExport.gltf" alt="Clash Interactif CVC vs ARCH" auto-rotate camera-controls style="width: 100%; height: 100%; background-color: #e5e5e5; display: block; border-radius: 8px;"></model-viewer>
                                 <div style="position: absolute; top: 10px; left: 10px; z-index: 10; background: var(--accent); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.75rem; font-weight: bold; pointer-events: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"><i class="fas fa-cube" style="margin-right:5px;"></i> Tourner à 360°</div>
+                                
+                                <!-- Description du clash -->
+                                <div style="position: absolute; bottom: 15px; left: 15px; right: 15px; background: rgba(15, 23, 42, 0.9); color: white; padding: 15px; border-radius: 8px; font-size: 0.85rem; z-index: 10; border-left: 4px solid #ff4757; box-shadow: 0 4px 20px rgba(0,0,0,0.3); pointer-events: none;">
+                                    <strong style="color: #ff4757; display: block; margin-bottom: 5px;"><i class="fas fa-exclamation-triangle"></i> Analyse du conflit :</strong>
+                                    Les réseaux MEP (bouches et gaines) traversent <strong style="color:#f1c40f;">le faux-plafond</strong> et s'y encastrent. Il est nécessaire de remonter l'ensemble de ces réseaux au-dessus du faux-plafond pour résoudre ce clash.
+                                </div>
                             </div>
                             <div class="slider-slide"><img src="assets/images/reseau eau glacé.png"
                                     alt="Synthèse Technique Fluides - Vue 1" class="show-full"></div>
@@ -389,6 +395,25 @@
             duration: 1000,
             once: true,
             offset: 100
+        });
+
+        // Colorisation dynamique des réseaux MEP dans la maquette 3D
+        document.addEventListener('DOMContentLoaded', () => {
+            const clashModel = document.getElementById('clash-model');
+            if (clashModel) {
+                clashModel.addEventListener('load', () => {
+                    const materials = clashModel.model.materials;
+                    materials.forEach(mat => {
+                        const name = mat.name.toLowerCase();
+                        // Identifier les matériaux type CVC / Plomberie / Acier
+                        const isMep = name.includes('galvanized') || name.includes('acier') || name.includes('pipe') || name.includes('plastique') || name.includes('aldes') || name.includes('valve') || name.includes('strat');
+                        if (isMep) {
+                            // Mettre en rouge vif
+                            mat.pbrMetallicRoughness.setBaseColorFactor([0.9, 0.1, 0.1, 1]);
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>
