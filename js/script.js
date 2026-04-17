@@ -207,7 +207,19 @@ function initLightbox() {
                             const img = allSlides[idx].querySelector('img');
                             
                             if (modelViewer) {
-                                // Plein écran CSS personnalisé (100% compatible)
+                                // Stocker le parent et créer un emplacement temporaire
+                                const parentNode = modelViewer.parentNode;
+                                const placeholder = document.createElement('div');
+                                placeholder.style.width = '100%';
+                                placeholder.style.height = '100%';
+                                placeholder.style.backgroundColor = '#e5e5e5';
+                                placeholder.style.borderRadius = '8px';
+                                parentNode.insertBefore(placeholder, modelViewer);
+                                
+                                // Déplacer temporairement le model-viewer dans le body pour éviter le clipping (identique au Viewer.js)
+                                document.body.appendChild(modelViewer);
+                                
+                                // Plein écran CSS personnalisé
                                 modelViewer.style.position = 'fixed';
                                 modelViewer.style.top = '0';
                                 modelViewer.style.left = '0';
@@ -240,6 +252,10 @@ function initLightbox() {
                                 document.body.appendChild(closeBtn);
                                 
                                 closeBtn.addEventListener('click', () => {
+                                    // Remettre le modèle à sa place initiale
+                                    parentNode.insertBefore(modelViewer, placeholder);
+                                    placeholder.remove();
+                                    
                                     modelViewer.style.position = '';
                                     modelViewer.style.top = '';
                                     modelViewer.style.left = '';
