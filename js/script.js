@@ -197,16 +197,27 @@ function initLightbox() {
             if (expandHint) {
                 expandHint.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    // On simule le clic sur l'image active du slider
                     const activeDot = card.querySelector('.slider-dot.active');
-                    const slides = sliderContainer.querySelectorAll('.slider-slide img');
-                    if (activeDot && slides.length > 0) {
+                    if (activeDot) {
                         const idx = parseInt(activeDot.dataset.index);
-                        if (slides[idx]) {
-                            slides[idx].click();
+                        const allSlides = sliderContainer.querySelectorAll('.slider-slide');
+                        
+                        if (allSlides[idx]) {
+                            const modelViewer = allSlides[idx].querySelector('model-viewer');
+                            const img = allSlides[idx].querySelector('img');
+                            
+                            if (modelViewer) {
+                                // Lancer le mode plein écran pour le modèle 3D
+                                if (modelViewer.requestFullscreen) {
+                                    modelViewer.requestFullscreen();
+                                } else if (modelViewer.webkitRequestFullscreen) {
+                                    modelViewer.webkitRequestFullscreen();
+                                }
+                            } else if (img) {
+                                // Lancer Viewer.js pour les images
+                                img.click();
+                            }
                         }
-                    } else if (slides.length > 0) {
-                        slides[0].click();
                     }
                 });
             }
