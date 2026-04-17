@@ -207,12 +207,51 @@ function initLightbox() {
                             const img = allSlides[idx].querySelector('img');
                             
                             if (modelViewer) {
-                                // Lancer le mode plein écran pour le modèle 3D
-                                if (modelViewer.requestFullscreen) {
-                                    modelViewer.requestFullscreen();
-                                } else if (modelViewer.webkitRequestFullscreen) {
-                                    modelViewer.webkitRequestFullscreen();
-                                }
+                                // Plein écran CSS personnalisé (100% compatible)
+                                modelViewer.style.position = 'fixed';
+                                modelViewer.style.top = '0';
+                                modelViewer.style.left = '0';
+                                modelViewer.style.width = '100vw';
+                                modelViewer.style.height = '100vh';
+                                modelViewer.style.zIndex = '999999';
+                                modelViewer.style.borderRadius = '0';
+                                modelViewer.style.backgroundColor = 'rgba(15, 23, 42, 0.98)';
+                                document.body.style.overflow = 'hidden';
+                                
+                                // Bouton "Fermer"
+                                const closeBtn = document.createElement('div');
+                                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                                closeBtn.style.position = 'fixed';
+                                closeBtn.style.top = '20px';
+                                closeBtn.style.right = '20px';
+                                closeBtn.style.zIndex = '9999999';
+                                closeBtn.style.color = 'white';
+                                closeBtn.style.fontSize = '24px';
+                                closeBtn.style.cursor = 'pointer';
+                                closeBtn.style.background = 'rgba(0,0,0,0.6)';
+                                closeBtn.style.width = '50px';
+                                closeBtn.style.height = '50px';
+                                closeBtn.style.display = 'flex';
+                                closeBtn.style.alignItems = 'center';
+                                closeBtn.style.justifyContent = 'center';
+                                closeBtn.style.borderRadius = '50%';
+                                closeBtn.style.boxShadow = '0 4px 10px rgba(0,0,0,0.5)';
+                                
+                                document.body.appendChild(closeBtn);
+                                
+                                closeBtn.addEventListener('click', () => {
+                                    modelViewer.style.position = '';
+                                    modelViewer.style.top = '';
+                                    modelViewer.style.left = '';
+                                    modelViewer.style.width = '100%';
+                                    modelViewer.style.height = '100%';
+                                    modelViewer.style.zIndex = '';
+                                    modelViewer.style.borderRadius = '8px';
+                                    modelViewer.style.backgroundColor = '#e5e5e5';
+                                    document.body.style.overflow = 'auto';
+                                    closeBtn.remove();
+                                });
+                                
                             } else if (img) {
                                 // Lancer Viewer.js pour les images
                                 img.click();
