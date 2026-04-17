@@ -525,7 +525,7 @@ nav .container {
 
 .expand-hint {
     position: absolute;
-    top: 50%;
+    top: 30%; /* Remonté pour être bien visible et ne pas gêner */
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
     background: rgba(13, 17, 23, 0.7);
@@ -541,7 +541,8 @@ nav .container {
     display: flex;
     align-items: center;
     gap: 10px;
-    pointer-events: none;
+    pointer-events: auto; /* Permet le clic direct sur la pastille */
+    cursor: pointer;
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
