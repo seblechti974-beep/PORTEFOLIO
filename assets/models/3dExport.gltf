@@ -44088,14 +44088,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "S4R_Acier",
                           "pbrMetallicRoughness":  {
-                                                       "baseColorFactor":  [
-                                                                               0.212230742,
-                                                                               0.212230742,
-                                                                               0.212230742,
-                                                                               1.0
-                                                                           ],
                                                        "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0
+                                                       "roughnessFactor":  1.0,
+                                                       "baseColorFactor":  [
+                                                                               0.9,
+                                                                               0.05,
+                                                                               0.05,
+                                                                               1
+                                                                           ]
                                                    },
                           "doubleSided":  false
                       },
@@ -44133,14 +44133,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Plastique, blanc opaque",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.05,
-                                                                               0.05,
-                                                                               1
-                                                                           ]
+                                                                               0.9301109,
+                                                                               0.9301109,
+                                                                               0.8631573,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44148,14 +44148,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Plastique VERT",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.05,
-                                                                               0.05,
-                                                                               1
-                                                                           ]
+                                                                               0.187820777,
+                                                                               0.187820777,
+                                                                               0.187820777,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44163,14 +44163,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Plastique bleu",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.05,
-                                                                               0.05,
-                                                                               1
-                                                                           ]
+                                                                               0.0129830325,
+                                                                               0.0129830325,
+                                                                               0.450785846,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44568,14 +44568,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "PVC - Blanc",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.05,
-                                                                               0.05,
-                                                                               1
-                                                                           ]
+                                                                               1.0,
+                                                                               1.0,
+                                                                               1.0,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
