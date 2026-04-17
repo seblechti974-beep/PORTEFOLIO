@@ -44088,14 +44088,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "S4R_Acier",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.212230742,
+                                                                               0.212230742,
+                                                                               0.212230742,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44118,14 +44118,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Stratifié rouge",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               1.0,
+                                                                               0.0,
+                                                                               0.0,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44137,8 +44137,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44152,8 +44152,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44167,8 +44167,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44182,8 +44182,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44197,8 +44197,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44227,8 +44227,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44238,14 +44238,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Acier inoxydable",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.187820777,
+                                                                               0.187820777,
+                                                                               0.187820777,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44253,14 +44253,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Body Material",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.9734455,
+                                                                               0.9386859,
+                                                                               0.799102843,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44272,8 +44272,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44287,8 +44287,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44302,8 +44302,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44317,8 +44317,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
@@ -44343,14 +44343,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Power Material",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.06480329,
+                                                                               0.06480329,
+                                                                               0.06480329,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44358,14 +44358,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Side Material",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.07227187,
+                                                                               0.07227187,
+                                                                               0.07227187,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44373,14 +44373,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Control",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.104616508,
+                                                                               0.104616508,
+                                                                               0.104616508,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44403,14 +44403,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Acier inoxydable AISI 430",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.50888145,
+                                                                               0.496933043,
+                                                                               0.48515,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44478,14 +44478,14 @@
                           "alphaMode":  "OPAQUE",
                           "name":  "Maçonnerie - Béton coulé sur place",
                           "pbrMetallicRoughness":  {
-                                                       "metallicFactor":  0.0,
-                                                       "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
-                                                                               0.9,
-                                                                               0.1,
-                                                                               0.1,
-                                                                               1
-                                                                           ]
+                                                                               0.327778161,
+                                                                               0.246201411,
+                                                                               0.215860546,
+                                                                               1.0
+                                                                           ],
+                                                       "metallicFactor":  0.0,
+                                                       "roughnessFactor":  1.0
                                                    },
                           "doubleSided":  false
                       },
@@ -44572,8 +44572,8 @@
                                                        "roughnessFactor":  1.0,
                                                        "baseColorFactor":  [
                                                                                0.9,
-                                                                               0.1,
-                                                                               0.1,
+                                                                               0.05,
+                                                                               0.05,
                                                                                1
                                                                            ]
                                                    },
