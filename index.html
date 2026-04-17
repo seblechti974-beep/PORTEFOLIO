@@ -220,6 +220,11 @@
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-slider" id="slider-fluides">
                         <div class="slider-container">
+                            <div class="slider-slide" style="position: relative;">
+                                <!-- Visionneuse 3D Native -->
+                                <model-viewer src="assets/models/3dExport.gltf" alt="Clash Interactif CVC vs ARCH" auto-rotate camera-controls style="width: 100%; height: 100%; background-color: #e5e5e5; display: block; border-radius: 8px;"></model-viewer>
+                                <div style="position: absolute; top: 10px; left: 10px; z-index: 10; background: var(--accent); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.75rem; font-weight: bold; pointer-events: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"><i class="fas fa-cube" style="margin-right:5px;"></i> Tourner à 360°</div>
+                            </div>
                             <div class="slider-slide"><img src="assets/images/reseau eau glacé.png"
                                     alt="Synthèse Technique Fluides - Vue 1" class="show-full"></div>
                             <div class="slider-slide"><img src="assets/images/coupe 1.png"
@@ -235,6 +240,7 @@
                             <div class="slider-dot" data-index="1"></div>
                             <div class="slider-dot" data-index="2"></div>
                             <div class="slider-dot" data-index="3"></div>
+                            <div class="slider-dot" data-index="4"></div>
                         </div>
                         <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
                         <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
@@ -375,6 +381,8 @@
     <!-- JS Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"></script>
+    <!-- Google Model Viewer (3D) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <script src="js/script.js"></script>
     <script>
         AOS.init({
